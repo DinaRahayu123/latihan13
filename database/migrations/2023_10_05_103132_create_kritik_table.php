@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('kritik', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('film_id');
             $table->foreign('film_id')->references('id')->on('film');
-            $table->timestamps();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users');
             $table->text('content');
             $table->integer('point');
             $table->timestamps();
